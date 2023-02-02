@@ -1,10 +1,9 @@
-import { useState } from 'react'
 import { Box } from "@chakra-ui/react"
+import { NavBar } from "./component"
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Box display='flex' p={4} justifyItems='center' alignItems='center'>
+    <Box>
+      <NavBar />
 
       <Box>hello world</Box>
     </Box>
