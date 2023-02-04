@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Heading, Image, IconButton, useMediaQuery } from "@chakra-ui/react"
-import btnImage from "../../public/btn.png"
+import btnImage from "/btn.png"
 import { MoonIcon } from '@chakra-ui/icons'
 
 export default function NavBar() {
