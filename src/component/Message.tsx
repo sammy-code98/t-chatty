@@ -6,6 +6,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Message({ message }: { message: any }): JSX.Element {
     const [user] = useAuthState(auth)
+    console.log(message.uid, 'msgg id');
+
     return (
         <Box mt='4rem' px='4rem'>
             <Box
@@ -15,8 +17,8 @@ export default function Message({ message }: { message: any }): JSX.Element {
                 bg='whiteSmoke'
                 color='gray.700'
                 shadow='md'
-                borderRadius='md'
                 width='50%'
+                borderRadius={`${message.uid === user?.uid ? '20px 20px 0 20px' : '20px 20px 20px 0'}`}
                 float={`${message.uid === user?.uid ? 'right' : 'left'}`}
             >
                 <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
