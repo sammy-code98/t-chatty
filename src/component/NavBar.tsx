@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Heading, Image, IconButton, useMediaQuery } from "@chakra-ui/react"
 import btnImage from "/btn.png"
 import { MoonIcon } from '@chakra-ui/icons'
+import { auth } from "../services/firebase"
+
 
 export default function NavBar() {
     const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)')
