@@ -1,10 +1,11 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
+import Message from './Message';
 export default function ChatBox() {
     return (
-        <Box w='100vh'>
+        <Box>
             <Box>
-                {/* message goes here */}
+                <Message message={''} />
             </Box>
             <Box>
                 {/* send message btn */}
