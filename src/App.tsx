@@ -3,6 +3,7 @@ import { NavBar, ChatBox } from "./component"
 import btnImage from "/btn.png"
 import { auth } from "./services/firebase"
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth"
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 const Home = () => {
@@ -23,12 +24,18 @@ const Home = () => {
   )
 }
 function App() {
+  const [user] = useAuthState(auth)
   return (
     <Box>
       <NavBar />
+      {!user ? (
       <Home />
+      ) : (
+        <>
+          <ChatBox />
+        </>
+      )}
 
-      <ChatBox />
     </Box>
   )
 }
