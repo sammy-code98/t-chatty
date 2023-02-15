@@ -21,8 +21,6 @@ export default function NavBar() {
         auth.signOut()
     }
 
-
-
     return (
         <Box
             display='flex'
