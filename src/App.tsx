@@ -1,5 +1,5 @@
 import { Box, Heading, Text, Image } from "@chakra-ui/react"
-import { NavBar } from "./component"
+import { NavBar, ChatBox } from "./component"
 import btnImage from "/btn.png"
 
 
@@ -21,6 +21,7 @@ function App() {
       <NavBar />
       <Home />
 
+      <ChatBox />
     </Box>
   )
 }
