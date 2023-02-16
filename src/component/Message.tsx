@@ -21,10 +21,10 @@ export default function Message({ message }: { message: any }): JSX.Element {
                 borderRadius={`${message.uid === user?.uid ? '20px 20px 0 20px' : '20px 20px 20px 0'}`}
                 float={`${message.uid === user?.uid ? 'right' : 'left'}`}
             >
-                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+                <Avatar name='Dan Abrahmov' src={message.avatar} />
                 <Box ml='1.5rem'>
-                    <Text color='gray.700' fontWeight='bold'>Msg name</Text>
-                    <Text color='gray.700' wordBreak='break-all'>msg text </Text>
+                    <Text color='gray.700' fontWeight='bold'>{message.name}</Text>
+                    <Text color='gray.700' wordBreak='break-all'>{message.text}</Text>
                 </Box>
             </Box>
 
