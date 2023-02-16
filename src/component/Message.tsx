@@ -9,7 +9,7 @@ export default function Message({ message }: { message: any }): JSX.Element {
     console.log(message.uid, 'msgg id');
 
     return (
-        <Box mt='4rem' px='4rem'>
+        <Box mt='2rem' px='4rem'>
             <Box
                 display='flex'
                 alignItems='flex-start'
