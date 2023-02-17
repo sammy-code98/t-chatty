@@ -7,7 +7,7 @@ import { db } from "../services/firebase"
 
 
 export default function ChatBox() {
-    const scroll = useRef()
+    const scroll = useRef<HTMLInputElement>(null)
     const [messages, setMessages] = useState(Array<any>)
 
     useEffect(() => {
@@ -35,6 +35,7 @@ export default function ChatBox() {
 
                 ))}
             </Box>
+            <span ref={scroll}></span>
             <Box>
                 <SendMessage scroll={scroll} />
             </Box>
