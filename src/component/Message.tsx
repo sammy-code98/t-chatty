@@ -6,7 +6,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Message({ message }: { message: any }): JSX.Element {
     const [user] = useAuthState(auth)
-    console.log(message.uid, 'msgg id');
+
+    console.log(user);
 
     return (
         <Box mt='2rem' px='4rem'>

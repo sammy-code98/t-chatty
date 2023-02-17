@@ -3,6 +3,11 @@ import { auth, db } from "../services/firebase"
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { Box, Button, FormControl, Input } from '@chakra-ui/react';
 
+interface User {
+    uid: string,
+    displayName: string,
+    photoURL: string
+}
 export default function SendMessage({ scroll }: any) {
     const [message, setMessage] = useState("")
 
@@ -31,7 +36,6 @@ export default function SendMessage({ scroll }: any) {
                 display='flex'
                 justifyContent='space-between'
                 px='2rem'
-                pb='1rem'
                 pos='fixed'
                 bottom='0px'
                 w='100%'
