@@ -3,13 +3,10 @@ import { auth, db } from "../services/firebase"
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { Box, Button, FormControl, Input } from '@chakra-ui/react';
 
-interface User {
-    uid: string,
-    displayName: string,
-    photoURL: string
-}
+
 export default function SendMessage({ scroll }: any) {
     const [message, setMessage] = useState("")
+
 
     const sendMessage = async (event: any) => {
         event.preventDefault()
@@ -17,7 +14,7 @@ export default function SendMessage({ scroll }: any) {
             alert("Enter Valid message")
             return;
         }
-        const { uid, displayName, photoURL } = auth.currentUser
+        const { uid, displayName, photoURL }: any = auth.currentUser
         await addDoc(collection(db, "messages"), {
             text: message,
             name: displayName,

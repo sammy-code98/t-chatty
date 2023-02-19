@@ -25,7 +25,7 @@ export default function ChatBox() {
             setMessages(messages)
 
         })
-        return () => unsubscribe;
+        unsubscribe()
 
     }, [])
 
