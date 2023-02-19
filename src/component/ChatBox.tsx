@@ -30,7 +30,7 @@ export default function ChatBox() {
     }, [])
 
     return (
-        <Box display='flex' flexDirection='column'>
+        <Box display='flex' flexDirection='column' w='100vw' py='3rem'>
             <Box p='0.5rem' mb='3rem' display='flex' flexDirection='column'>
                 {messages?.map((message) => (
                     <Message key={message.id} message={message} />

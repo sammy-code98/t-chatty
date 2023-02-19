@@ -29,17 +29,22 @@ export default function SendMessage({ scroll }: any) {
         scroll.current.scrollIntoView({ behaviour: 'smooth' })
     }
     return (
-        <Box >
+        <Box>
             <Box
                 as='form'
                 onSubmit={sendMessage}
                 display='flex'
                 justifyContent='space-between'
-                px='2rem'
+                px={{ base: '0.5rem', md: '2rem' }}
                 pos='fixed'
                 bottom='0px'
                 w='100%'
-                alignItems='center' gap='2'>
+                alignItems='center'
+                gap='2'
+                overflowX='hidden'
+                bg='white'
+
+            >
                 <FormControl>
                     <Input variant='outline' type='text' placeholder='type message...' value={message}
                         onChange={(e) => setMessage(e.target.value)}

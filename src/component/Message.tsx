@@ -7,18 +7,17 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function Message({ message }: { message: any }): JSX.Element {
     const [user] = useAuthState(auth)
 
-    console.log(user);
 
     return (
-        <Box mt='2rem' px='4rem'>
+        <Box mt='2rem' px={{ base: '1rem', md: '4rem' }}>
             <Box
                 display='flex'
                 alignItems='flex-start'
-                p='2rem'
+                p={{ base: '0.5rem', md: '2rem' }}
                 bg='whiteSmoke'
                 color='gray.700'
                 shadow='md'
-                width='50%'
+                width={{ base: '70%', md: '50%' }}
                 borderRadius={`${message.uid === user?.uid ? '20px 20px 0 20px' : '20px 20px 20px 0'}`}
                 float={`${message.uid === user?.uid ? 'right' : 'left'}`}
             >
