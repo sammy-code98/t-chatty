@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import Message from './Message';
 import SendMessage from './SendMessage';
-import { query, collection, orderBy, onSnapshot, limit, QuerySnapshot } from 'firebase/firestore';
+import { query, collection, orderBy, onSnapshot, limit } from 'firebase/firestore';
 import { db } from "../services/firebase"
 
 
 export default function ChatBox() {
-    const scroll = useRef()
+    const scroll = useRef<HTMLInputElement>(null)
     const [messages, setMessages] = useState(Array<any>)
 
     useEffect(() => {
@@ -18,13 +18,15 @@ export default function ChatBox() {
         )
 
         const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
-            let messages = []
+            let messages: {}[] = []
             QuerySnapshot.forEach((doc) => {
                 messages.push({ ...doc.data(), id: doc.id })
             })
             setMessages(messages)
+
         })
         return () => unsubscribe;
+
     }, [])
 
     return (
@@ -35,6 +37,7 @@ export default function ChatBox() {
 
                 ))}
             </Box>
+            <span ref={scroll}></span>
             <Box>
                 <SendMessage scroll={scroll} />
             </Box>
