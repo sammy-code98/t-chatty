@@ -14,13 +14,14 @@ const Home = () => {
   }
 
   return (
-    <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' py='4rem'>
+    <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' py='8rem'>
       <Heading>Hey Chatty</Heading>
       <Text mt='2rem' fontWeight={700}>Sign in with your google account to continue to enjoy chatty</Text>
       <Box mt='3rem'>
         <Image src={btnImage} alt='btn image' cursor='pointer' onClick={googleSignIn} />
       </Box>
     </Box>
+
   )
 }
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <NavBar />
       {!user ? (
       <Home />
+
       ) : (
         <>
           <ChatBox />
