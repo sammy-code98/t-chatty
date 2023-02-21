@@ -40,6 +40,7 @@ export default function SendMessage({ scroll }: any) {
                 gap='2'
                 overflowX='hidden'
                 bg='white'
+                mb='0.5rem'
 
             >
                 <FormControl>
